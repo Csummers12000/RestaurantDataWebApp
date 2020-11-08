@@ -7,6 +7,7 @@ fetch(labData)
   .then((blob) => blob.json())
   .then((data) => cities.push(...data));
 
+
 function findMatches(wordsToMatch, cities) {
   return cities.filter((place) => {
     const regex = new RegExp(wordsToMatch, 'gi');
@@ -27,9 +28,9 @@ function displayMatches() {
     const inspectRes = place.inspection_results.replace(regex, `<span class="highlightme">${this.value}</span>`);
     return `
             <li>
-                <span class="name">${placeName}</span>           
-                <span class="location">${cityName}, ${stateName}</span>
-                <span class="inspection">${inspectRes}</span>
+                <span class="name">${placeName.toLowerCase()}</span>           
+                <span class="location">${cityName.toLowerCase()}, ${stateName.toLowerCase()}</span>
+                <span class="inspection">${inspectRes.toLowerCase()}</span>
             </li>
         `;
   }).join('');
