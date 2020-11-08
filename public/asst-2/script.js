@@ -14,7 +14,7 @@ function findMatches(wordsToMatch, cities) {
     if (wordsToMatch === '') {
       return null;
     }
-    return place.name.match(regex) || place.state.match(regex) || place.city.match(regex) || place.inspection_results.match(regex);
+    return place.name.match(regex) || place.inspection_results.match(regex);
   });
 }
 
@@ -23,13 +23,10 @@ function displayMatches() {
   const html = matchArray.map((place) => {
     const regex = new RegExp(this.value, 'gi');
     const placeName = place.name.replace(regex, `<span class="highlightme">${this.value}</span>`);
-    const cityName = place.city.replace(regex, `<span class="highlightme">${this.value}</span>`);
-    const stateName = place.state.replace(regex, `<span class="highlightme">${this.value}</span>`);
     const inspectRes = place.inspection_results.replace(regex, `<span class="highlightme">${this.value}</span>`);
     return `
             <li>
                 <span class="name">${placeName.toLowerCase()}</span>           
-                <span class="location">${cityName.toLowerCase()}, ${stateName.toLowerCase()}</span>
                 <span class="inspection">${inspectRes.toLowerCase()}</span>
             </li>
         `;
