@@ -32,7 +32,7 @@ function displayMatches() {
             <li>
                 <span class="name">${placeName}</span>           
                 <span class="location">${cityName}, ${stateName}</span>
-                <span class="inspection">${place.inspection_results}</span>
+                <span class="inspection">${inspectRes}</span>
             </li>
         `;
   }).join('');
