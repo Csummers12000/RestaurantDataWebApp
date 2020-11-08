@@ -38,6 +38,9 @@ function displayMatches() {
   }).join('');
   suggestions.innerHTML = html;
 }
+const searchInput = document.querySelector('.textinput');
+const suggestions = document.querySelector('.suggestions');
+searchInput.addEventListener('input', displayMatches);
 //end of script
 
 
@@ -119,7 +122,7 @@ function getResults(jsonFromServer) {
 
 
   
-/*document.body.addEventListener('submit', async (e) => {
+/*document.body.addEventListener('input', async (e) => {
     e.preventDefault(); 
     const form = $(e.target).serializeArray();
     fetch('/api', {
@@ -133,6 +136,4 @@ function getResults(jsonFromServer) {
       .then((jsonFromServer) => getResults(jsonFromServer))   
     console.log(err);
 });
-
-  */
-
+*/
