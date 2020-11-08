@@ -13,10 +13,7 @@ function findMatches(wordsToMatch, cities) {
     if (wordsToMatch === '') {
       return null;
     }
-    return place.name.match(regex)
-    || place.state.match(regex)
-    || place.city.match(regex)
-    || place.inspection_results.match(regex);
+    return place.name.match(regex) || place.state.match(regex) || place.city.match(regex) || place.inspection_results.match(regex);
   });
 }
 
@@ -88,11 +85,6 @@ function displayMatches() {
 const searchInput = document.querySelector('.textinput');
 const suggestions = document.querySelector('.suggestions');
 searchInput.addEventListener('input', displayMatches);
-
-
-
-
-
 
 /*
 const { default: fetch } = require("node-fetch");
