@@ -1,6 +1,7 @@
 html {
   height: 100%;
   width: 100%;
+  text-transform: capitalize;
 }
 
 body {
@@ -51,7 +52,6 @@ h1 {
     justify-content: center;
     font-weight: bold;
     font-size: 1.5em;
-    text-transform: capitalize;
     flex-wrap: nowrap;
     border-radius: 16px;
   }
@@ -98,7 +98,6 @@ li {
   justify-content: space-between;
   font-weight: bold;
   font-size: 1.0em;
-  text-transform: capitalize;
   flex-wrap: nowrap;
   border-radius: 16px;
 }
