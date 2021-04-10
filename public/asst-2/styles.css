@@ -63,14 +63,14 @@ h1 {
     line-height: 1.5;
     min-width: 500px;
     font-size: 33px;
+    color: white;
+    background-color: black;
 }
 
 .searchbar {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  background-color: black;
 }
 
 .highlightme { 
