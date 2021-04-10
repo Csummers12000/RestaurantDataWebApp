@@ -14,7 +14,14 @@ function findMatches(wordsToMatch, cities) {
     if (wordsToMatch === '') {
       return null;
     }
-    return place.name.match(regex) || place.inspection_results.match(regex);
+    return place.name.match(regex) || 
+          place.inspection_results.match(regex) || 
+          place.city.match(regex) || 
+          place.state.match(regex) ||
+          place.category.match(regex) ||
+          place.zip.match(regex) ||
+          place.address_line_1.match(regex) ||
+          place.inspection_date.substring(0, place.inspection_date.length - 13).match(regex);
   });
 }
 
@@ -24,10 +31,19 @@ function displayMatches() {
     const regex = new RegExp(this.value, 'gi');
     const placeName = place.name.replace(regex, `<span class="highlightme">${this.value}</span>`);
     const inspectRes = place.inspection_results.replace(regex, `<span class="highlightme">${this.value}</span>`);
+    const cat = place.category.replace(regex, `<span class="highlightme">${this.value}</span>`);
+    const city = place.city.replace(regex, `<span class="highlightme">${this.value}</span>`);
+    const state = place.state.replace(regex, `<span class="highlightme">${this.value}</span>`);
+    const zip = place.zip.replace(regex, `<span class="highlightme">${this.value}</span>`);
+    const address = place.address_line_1.replace(regex, `<span class="highlightme">${this.value}</span>`);
+    const inspectDate = place.inspection_date.substring(0, place.inspection_date.length - 13).replace(regex, `<span class="highlightme">${this.value}</span>`);
     return `
             <li>
-                <span class="name">${placeName.toLowerCase()}</span>           
+                <span class="name">${placeName.toLowerCase()}</span>
+                <span class="inspection">${cat.toLowerCase()}</span>           
                 <span class="inspection">${inspectRes.toLowerCase()}</span>
+                <span class="inspection">Inspection Date: ${inspectDate.toLowerCase()}</span>
+                <span class="inspection">${address.toLowerCase()}, ${city.toLowerCase()} ${state} ${zip}</span>
             </li>
         `;
   }).join('');

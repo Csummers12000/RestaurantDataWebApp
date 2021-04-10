@@ -6,7 +6,7 @@ html {
 
 body {
   /* background: #3d009e; */
-  background: linear-gradient(rgb(7, 199, 224) 35%, rgb(11, 54, 248) 100%);
+  background: linear-gradient(rgb(0, 137, 155) 35%, rgb(0, 138, 57) 100%);
   background-attachment: fixed;
   font-size: 1.0em;
   line-height: 1.6;
@@ -43,9 +43,9 @@ h1 {
     padding: 0px 20px;
     min-height: 75px;
     /* background-color: #2dc1fb; */
-    background-color: rgb(49, 85, 245);
-    /* color: black; */
-    color: rgb(207, 215, 216);
+    background-color: rgb(150, 7, 7);
+    color: black;
+    /* color: rgb(36, 36, 36); */
     display: flex;
     
     align-items: center;
@@ -72,7 +72,7 @@ h1 {
 }
 
 .highlightme { 
-  background-color:rgb(7, 199, 224); 
+  background-color:rgb(150, 7, 7); 
 }
 
 .suggestions {
